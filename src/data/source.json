@@ -1,0 +1,79 @@
+[
+  {
+    "path": "/user/new",
+    "method": "POST",
+    "desc": "Create a new user",
+    "post_body": {
+      "email": "spencer@gmail.com",
+      "password": "a0b0c0d",
+      "location_name": "Spencer's Bookstore",
+      "review_site": "GOOGLE",
+      "extern_id": "{google_place_id}"
+    },
+  },
+  {
+    "path": "/user/list",
+    "method": "GET",
+    "desc": "Return the list of all users",
+    "example": {
+      "success": {
+        "data": [],
+        "error": null,
+      },
+      "fail": {
+        "error": {
+          "key": "NOT_AUTHORIZED"
+        }
+      }
+    }
+  },
+  {
+    "path": "/user/:userId",
+    "method": "GET",
+    "desc": "Return a user by id",
+    "example": {
+      "success": {
+        "data": {
+          "id": 18,
+          "email": "dontaskspencer@gmail.com",
+          "type": "ADMIN",
+          "enabled": true,
+          "verified": true,
+          "stripe_id": "cus_DbvY4sfOIPsUNs",
+          "date_trial_end": 1537051057890,
+          "date_created": 1537051081742
+        }
+      },
+      "fail": {
+        "error": {
+          "key": "NOT_AUTHORIZED"
+        }
+      }
+    }
+  },
+  {
+    "path": "/user/:userId",
+    "method": "PATCH",
+    "desc": "Update *approved* attributes of a user",
+    "example": {
+      "success": {
+        "data": {
+          "success": {
+            "updated": true
+          },
+          "fail": {
+            "error": {
+              "key": "NOT_AUTHORIZED"
+            }
+          },
+        }
+      },
+      "fail": {},
+    }
+  },
+  {
+    "path": "/user/:userId",
+    "method": "DELETE",
+    "desc": "Delete a user by id"
+  }
+];
