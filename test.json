@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/user/new",
+    "method": "POST",
+    "desc": "Create a new user",
+    "post_body": {
+      "email": "spencer@gmail.com",
+      "password": "a0b0c0d",
+      "location_name": "Spencer's Bookstore",
+      "review_site": "GOOGLE",
+      "extern_id": "{google_place_id}"
+    },
+  },
+  {
+    "path": "/user"
+  }
+];
