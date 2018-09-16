@@ -1,6 +1,33 @@
-const rootEl = document.querySelector('#root');
+const content = document.querySelector('.content');
 
 (async () => {
-  const paths = await fetch('/data/paths.json').then(res => res.json());
-  console.log('paths:', paths);
+  const endpoints = await fetch('/data/endpoints.json').then(res => res.json());
+  endpoints.forEach(ep => {
+    const endpointDisplay = createEndpointDisplay(ep);
+    content.appendChild(endpointDisplay);
+  });
 })();
+
+function createEndpointDisplay(endpoint) {
+  const { path, method, desc, post_body, example } = endpoint;
+
+  const container = createElement('div', ['endpoint-container']);
+  const titleRow = createElement('div', ['title-row']);
+
+  const methodTag = createElement('div', ['tag', [method.toLowerCase()]]);
+  methodTag.textContent = method;
+  titleRow.appendChild(methodTag);
+
+  const title = createElement('h2', ['endpoint-path']);
+  title.textContent = path;
+  titleRow.appendChild(title);
+
+  container.appendChild(titleRow);
+  return container;
+}
+
+function createElement(type, classes = []) {
+  const el = document.createElement(type);
+  el.classList.add.apply(el.classList, classes);
+  return el;
+}

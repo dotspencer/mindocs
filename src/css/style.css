@@ -1,0 +1,51 @@
+* { box-sizing: border-box; }
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.content {
+  max-width: 650px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.6rem;
+}
+h2 {
+  font-size: 1.2rem;
+}
+.title-row {
+  margin: 10px 0;
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 5px;
+  /* border: 1px solid lightgray; */
+}
+.endpoint-path {
+  display: inline-block;
+  margin: 0;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+.tag {
+  display: inline-block;
+  background-color: lightgray;
+  padding: 6px 0;
+  width: 83px;
+  text-align: center;
+  margin-right: 10px;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.tag.post {
+  background-color: #8ab383;
+}
+.tag.get {
+  background-color: deepskyblue;
+}
+.tag.delete {
+  background-color: tomato;
+}
+.tag.path {
+  background-color: purple;
+}
