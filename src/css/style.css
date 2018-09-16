@@ -12,14 +12,8 @@ h1 {
 h2 {
   font-size: 1.2rem;
 }
-.title-row {
-  margin: 10px 0;
-  background-color: whitesmoke;
-  padding: 5px;
-  border-radius: 5px;
-  /* border: 1px solid lightgray; */
-  position: relative;
-  cursor: pointer;
+h3 {
+  font-size: 1rem;
 }
 .tag {
   display: inline-block;
@@ -46,8 +40,21 @@ h2 {
 img.chevron {
   position: absolute;
   right: 10px;
-  top: 12px;
+  top: 8px;
   opacity: .4;
+}
+.rotated {
+  transform: rotate(180deg);
+}
+.title-row {
+  position: relative;
+  cursor: pointer;
+}
+.endpoint-container {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 0;
 }
 .endpoint-path {
   display: inline-block;
@@ -58,10 +65,24 @@ img.chevron {
 }
 .endpoint-desc {
   display: inline-block;
-  margin-left: 10px;
-  font-size: 1rem;
+  margin-left: 20px;
+  font-size: 0.9rem;
 }
-.endpoint-desc::before {
+.show-more {
+  padding: 5px;
+}
+pre {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+.hidden {
+  display: none;
+}
+/* .endpoint-desc::before {
   content: '-';
   margin-right: 8px;
-}
+} */

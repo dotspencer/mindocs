@@ -17,8 +17,7 @@
     "desc": "Return the list of all users",
     "example": {
       "success": {
-        "data": [],
-        "error": null
+        "data": []
       },
       "fail": {
         "error": {
