@@ -22,6 +22,10 @@ function createEndpointDisplay(endpoint) {
   title.textContent = path;
   titleRow.appendChild(title);
 
+  const chev = createElement('img', ['chevron']);
+  chev.src = "/img/chevron.svg";
+  titleRow.appendChild(chev);
+
   container.appendChild(titleRow);
   return container;
 }
