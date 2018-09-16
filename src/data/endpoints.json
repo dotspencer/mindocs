@@ -54,7 +54,7 @@
   {
     "path": "/user/:userId",
     "method": "PATCH",
-    "desc": "Update *approved* attributes of a user",
+    "desc": "Update approved user attributes",
     "example": {
       "success": {
         "data": {

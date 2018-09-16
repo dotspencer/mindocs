@@ -22,6 +22,10 @@ function createEndpointDisplay(endpoint) {
   title.textContent = path;
   titleRow.appendChild(title);
 
+  const descEl = createElement('div', ['endpoint-desc']);
+  descEl.textContent = desc;
+  titleRow.appendChild(descEl);
+
   const chev = createElement('img', ['chevron']);
   chev.src = "/img/chevron.svg";
   titleRow.appendChild(chev);

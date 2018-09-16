@@ -19,21 +19,14 @@ h2 {
   border-radius: 5px;
   /* border: 1px solid lightgray; */
   position: relative;
-}
-.endpoint-path {
-  display: inline-block;
-  margin: 0;
-  font-family: Menlo, Consolas, monospace;
-  font-size: 1.1rem;
-  font-weight: 100;
+  cursor: pointer;
 }
 .tag {
   display: inline-block;
   background-color: lightgray;
   padding: 6px 0;
-  width: 83px;
+  width: 75px;
   text-align: center;
-  margin-right: 10px;
   color: white;
   border-radius: 4px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -53,6 +46,22 @@ h2 {
 img.chevron {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 12px;
   opacity: .4;
+}
+.endpoint-path {
+  display: inline-block;
+  margin: 0;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+.endpoint-desc {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+.endpoint-desc::before {
+  content: '-';
+  margin-right: 8px;
 }
