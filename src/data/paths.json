@@ -9,7 +9,7 @@
       "location_name": "Spencer's Bookstore",
       "review_site": "GOOGLE",
       "extern_id": "{google_place_id}"
-    },
+    }
   },
   {
     "path": "/user/list",
@@ -18,7 +18,7 @@
     "example": {
       "success": {
         "data": [],
-        "error": null,
+        "error": null
       },
       "fail": {
         "error": {
@@ -65,10 +65,10 @@
             "error": {
               "key": "NOT_AUTHORIZED"
             }
-          },
+          }
         }
       },
-      "fail": {},
+      "fail": {}
     }
   },
   {
@@ -76,4 +76,4 @@
     "method": "DELETE",
     "desc": "Delete a user by id"
   }
-];
+]
