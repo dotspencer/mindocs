@@ -10,20 +10,12 @@ const content = document.querySelector('.content');
 })();
 
 function createEndpointDisplay(endpoint) {
-  const { path, method, desc, post_body, example } = endpoint;
+  const { path, method, desc, req_body, example = {} } = endpoint;
 
   const container = createElement('div', ['endpoint-container']);
 
   // initially visible
   const titleRow = createElement('div', ['title-row']);
-  titleRow.addEventListener('click', function() {
-    const more = this.parentElement.querySelector('.show-more');
-    if (more) {
-      more.classList.toggle('hidden');
-      const img = this.parentElement.querySelector('img.chevron');
-      img.classList.toggle('rotated');
-    }
-  });
 
   const methodTag = createElement('div', ['tag', [method.toLowerCase()]]);
   methodTag.textContent = method;
@@ -38,25 +30,35 @@ function createEndpointDisplay(endpoint) {
   titleRow.appendChild(descEl);
   container.appendChild(titleRow);
 
-  // initially hidden
-  if (example) {
+  let moreElements = [];
+
+  // example responses
+  const { success, fail } = example;
+  const moreContainer = createElement('div', ['show-more', 'hidden']);
+
+  moreElements.push(createSnippet('Request Body', req_body));
+  moreElements.push(createSnippet('Success', success));
+  moreElements.push(createSnippet('Fail', fail));
+
+  // add all more elements
+  moreElements = moreElements.filter(m => m);
+  moreElements.forEach(m => {
+    moreContainer.appendChild(m);
+  });
+  container.appendChild(moreContainer);
+
+  if (moreElements.length > 0) {
+    titleRow.addEventListener('click', titleRowClicked);
     const chev = createElement('img', ['chevron']);
     chev.src = "/img/chevron.svg";
     titleRow.appendChild(chev);
-
-    const { success, fail } = example;
-    const more = createElement('div', ['show-more', 'hidden']);
-
-    more.appendChild(createSnippet('Success', success));
-    more.appendChild(createSnippet('Fail', fail));
-
-    container.appendChild(more);
   }
 
   return container;
 }
 
-function createSnippet(labelText, object = {}) {
+function createSnippet(labelText, object) {
+  if (!object) return;
   const snippet = createElement('div', ['snippet']);
 
   const exampleSuccess = createElement('pre');
@@ -73,4 +75,13 @@ function createElement(type, classes = []) {
   const el = document.createElement(type);
   el.classList.add.apply(el.classList, classes);
   return el;
+}
+
+function titleRowClicked() {
+  const more = this.parentElement.querySelector('.show-more');
+  if (more) {
+    more.classList.toggle('hidden');
+    const img = this.parentElement.querySelector('img.chevron');
+    img.classList.toggle('rotated');
+  }
 }
