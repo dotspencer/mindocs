@@ -10,7 +10,7 @@ const content = document.querySelector('.content');
 })();
 
 function createEndpointDisplay(endpoint) {
-  const { path, method, desc, req_body, example = {} } = endpoint;
+  const { path, method, desc, req_body, examples = {} } = endpoint;
 
   const container = createElement('div', ['endpoint-container']);
 
@@ -33,12 +33,12 @@ function createEndpointDisplay(endpoint) {
   let moreElements = [];
 
   // example responses
-  const { success, fail } = example;
+  const { success, fail } = examples;
   const moreContainer = createElement('div', ['show-more', 'hidden']);
 
   moreElements.push(createSnippet('Request Body', req_body));
-  moreElements.push(createSnippet('Success', success));
-  moreElements.push(createSnippet('Fail', fail));
+  moreElements.push(createSnippet('Response Success', success));
+  moreElements.push(createSnippet('Response Fail', fail));
 
   // add all more elements
   moreElements = moreElements.filter(m => m);

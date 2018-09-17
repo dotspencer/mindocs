@@ -9,13 +9,25 @@
       "location_name": "Spencer's Cafe",
       "review_site": "GOOGLE",
       "extern_id": "{google_place_id}"
+    },
+    "examples": {
+      "success": {
+        "data": {
+          "created": true
+        }
+      },
+      "fail": {
+        "error": {
+          "key": "hi"
+        }
+      }
     }
   },
   {
     "path": "/user/list",
     "method": "GET",
     "desc": "Return the list of all users",
-    "example": {
+    "examples": {
       "success": {
         "data": []
       },
@@ -30,7 +42,7 @@
     "path": "/user/:userId",
     "method": "GET",
     "desc": "Return a user by id",
-    "example": {
+    "examples": {
       "success": {
         "data": {
           "id": 18,
@@ -55,9 +67,9 @@
     "method": "PATCH",
     "desc": "Update approved user attributes",
     "req_body": {
-      
+
     },
-    "example": {
+    "examples": {
       "success": {
         "data": {
           "updated": true
@@ -74,5 +86,22 @@
     "path": "/user/:userId",
     "method": "DELETE",
     "desc": "Delete a user by id"
+  },
+  {
+    "path": "/user/who-am-i",
+    "method": "GET",
+    "desc": "Return the current user id",
+    "examples": {
+      "success": {
+        "data": {
+          "id": 18
+        }
+      },
+      "fail": {
+        "error": {
+          "key": "NOT_LOGGED_IN"
+        }
+      }
+    }
   }
 ]
