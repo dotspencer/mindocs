@@ -16,8 +16,7 @@ function createEndpointDisplay(endpoint) {
 
   // initially visible
   const titleRow = createElement('div', ['title-row']);
-
-  const methodTag = createElement('div', ['tag', [method.toLowerCase()]]);
+  const methodTag = createElement('div', ['tag', method.toLowerCase()]);
   methodTag.textContent = method;
   titleRow.appendChild(methodTag);
 
@@ -72,6 +71,7 @@ function createSnippet(labelText, object) {
 }
 
 function createElement(type, classes = []) {
+  classes = classes.filter(c => c);
   const el = document.createElement(type);
   el.classList.add.apply(el.classList, classes);
   return el;

@@ -67,7 +67,8 @@
     "method": "PATCH",
     "desc": "Update approved user attributes",
     "req_body": {
-
+      "email": "dontaskspencer@gmail.com",
+      "password": "a1b1c1d"
     },
     "examples": {
       "success": {
@@ -103,5 +104,15 @@
         }
       }
     }
+  },
+  {
+    "path": "/location/new",
+    "method": "POST",
+    "desc": ""
+  },
+  {
+    "path": "/location/list",
+    "method": "GET",
+    "desc": ""
   }
 ]
