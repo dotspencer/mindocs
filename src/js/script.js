@@ -36,15 +36,14 @@ function createEndpointDisplay(endpoint) {
   const descEl = createElement('div', ['endpoint-desc']);
   descEl.textContent = desc;
   titleRow.appendChild(descEl);
-
-  const chev = createElement('img', ['chevron']);
-  chev.src = "/img/chevron.svg";
-  titleRow.appendChild(chev);
-
   container.appendChild(titleRow);
 
   // initially hidden
   if (example) {
+    const chev = createElement('img', ['chevron']);
+    chev.src = "/img/chevron.svg";
+    titleRow.appendChild(chev);
+
     const { success, fail } = example;
     const more = createElement('div', ['show-more', 'hidden']);
 

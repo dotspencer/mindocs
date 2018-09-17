@@ -49,6 +49,7 @@ img.chevron {
 .title-row {
   position: relative;
   cursor: pointer;
+  user-select: none;
 }
 .endpoint-container {
   background-color: whitesmoke;

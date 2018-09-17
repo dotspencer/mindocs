@@ -57,17 +57,14 @@
     "example": {
       "success": {
         "data": {
-          "success": {
-            "updated": true
-          },
-          "fail": {
-            "error": {
-              "key": "NOT_AUTHORIZED"
-            }
-          }
+          "updated": true
         }
       },
-      "fail": {}
+      "fail": {
+        "error": {
+          "key": "NOT_AUTHORIZED"
+        }
+      }
     }
   },
   {
