@@ -10,7 +10,7 @@ const content = document.querySelector('.content');
 })();
 
 function createEndpointDisplay(endpoint) {
-  const { path, method, desc, req_body, examples = {} } = endpoint;
+  const { path = '', method = '', desc = '', req_body, examples = {} } = endpoint;
 
   const container = createElement('div', ['endpoint-container']);
 
