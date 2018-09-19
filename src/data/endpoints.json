@@ -108,12 +108,15 @@
   {},
   {
     "path": "/location/new",
-    "method": "POST",
-    "desc": ""
+    "method": "POST"
   },
   {
     "path": "/location/list",
+    "method": "GET"
+  },
+  {
+    "path": "/location/search",
     "method": "GET",
-    "desc": ""
+    "desc": "Returns location suggestions for signup"
   }
 ]
