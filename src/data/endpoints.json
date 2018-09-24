@@ -26,7 +26,7 @@
   {
     "path": "/user/list",
     "method": "GET",
-    "desc": "Return the list of all users",
+    "desc": "Get a list of all users",
     "examples": {
       "success": {
         "data": []
@@ -41,7 +41,7 @@
   {
     "path": "/user/:userId",
     "method": "GET",
-    "desc": "Return a user by id",
+    "desc": "Get a user by id",
     "examples": {
       "success": {
         "data": {
@@ -108,15 +108,33 @@
   {},
   {
     "path": "/location/new",
-    "method": "POST"
+    "method": "POST",
+    "desc": "Creates a new location attached to the current user"
   },
   {
     "path": "/location/list",
-    "method": "GET"
+    "method": "GET",
+    "desc": "Get list of locations the requester has access to",
+    "examples": {
+      "success": {
+        "data": []
+      }
+    }
   },
   {
-    "path": "/location/search",
+    "path": "/location/:locId",
     "method": "GET",
-    "desc": "Returns location suggestions for signup"
-  }
+    "desc": "Get a location by id"
+  },
+  {
+    "path": "/location/:locId",
+    "method": "PATCH",
+    "desc": "Update location attributes"
+  },
+  {
+    "path": "/location/:locId",
+    "method": "DELETE",
+    "desc": "Delete location by id"
+  },
+  {}
 ]

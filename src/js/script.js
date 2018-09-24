@@ -48,6 +48,7 @@ function createEndpointDisplay(endpoint) {
 
   if (moreElements.length > 0) {
     titleRow.addEventListener('click', titleRowClicked);
+    titleRow.classList.add('clickable');
     const chev = createElement('img', ['chevron']);
     chev.src = "/img/chevron.svg";
     titleRow.appendChild(chev);
