@@ -1,9 +1,10 @@
 * { box-sizing: border-box; }
 body {
   font-family: 'Open Sans', sans-serif;
+  margin-bottom: 200px;
 }
 .content {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
 }
 h1 {
@@ -80,9 +81,13 @@ pre {
   padding: 5px;
   border: 1px solid lightgray;
   border-radius: 3px;
+  overflow-x: scroll;
 }
 .hidden {
   display: none;
+}
+.invisible {
+  opacity: 0;
 }
 .clickable {
   cursor: pointer;

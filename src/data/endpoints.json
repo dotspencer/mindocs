@@ -136,5 +136,59 @@
     "method": "DELETE",
     "desc": "Delete location by id"
   },
-  {}
+  {
+    "path": "/location/public/:inviteId",
+    "method": "GET",
+    "desc": "Get location by invite id",
+    "examples": {
+      "success": {
+        "data": {
+          "name": "Spencer's Cafe",
+          "review_links": [
+            {
+             "name": "Google",
+             "url": "http://search.google.com/local/writereview?placeid=ChIJ2X5gRFNp6oAR8-elSupH1Js",
+             "bg_color": "#4885ed",
+             "text_color": "#fff"
+           }
+          ]
+        }
+      }
+    }
+  },
+  {},
+  {
+    "path": "/review-site-link/new",
+    "method": "POST",
+    "desc": "Create new link to review site"
+  },
+  {
+    "path": "/review-site-link/list",
+    "method": "GET",
+    "desc": "Get review site links for current location",
+    "examples": {
+      "success": {
+        "data": [
+          {
+            "review_site": {
+              "id": 1,
+              "name": "Google",
+              "review_url": "http://search.google.com/local/writereview?placeid={extern_id}",
+              "bg_color": "#4885ed",
+              "text_color": "#fff"
+            },
+            "extern_id": "ChIJ2X5gRFNp6oAR8-elSupH1Js"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "/review-site-link/:linkId",
+    "method": "PATCH",
+    "desc": "Update review site link attributes",
+    "req_body": {
+      "extern_id": "ChIJ2X5gRFNp6oAR8-elSupH1Js"
+    }
+  }
 ]

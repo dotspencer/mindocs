@@ -54,6 +54,10 @@ function createEndpointDisplay(endpoint) {
     titleRow.appendChild(chev);
   }
 
+  if (Object.keys(endpoint).length === 0) {
+    container.classList.add('invisible');
+  }
+
   return container;
 }
 
