@@ -258,5 +258,28 @@
       "invite_id": 34,
       "review_site_id": 1
     }
+  },
+  {},
+  {
+    "path": "/review/list?page=0",
+    "method": "GET",
+    "desc": "Get first page of reviews of current location",
+    "examples": {
+      "success": {
+        "data": [
+          {
+            "review_site_id": 1,
+            "author_id": "string",
+            "author_name": "string",
+            "rating": 5,
+            "text": "string",
+            "date_created": 1537937761473,
+            "deleted": false,
+            "photo_url": "string",
+            "date_uploaded": 1537937761473
+          }
+        ]
+      }
+    }
   }
 ]
