@@ -146,10 +146,11 @@
           "name": "Spencer's Cafe",
           "review_links": [
             {
-             "name": "Google",
-             "url": "http://search.google.com/local/writereview?placeid=ChIJ2X5gRFNp6oAR8-elSupH1Js",
-             "bg_color": "#4885ed",
-             "text_color": "#fff"
+              "review_site_id": 1,
+              "name": "Google",
+              "url": "http://search.google.com/local/writereview?placeid=ChIJ2X5gRFNp6oAR8-elSupH1Js",
+              "bg_color": "#4885ed",
+              "text_color": "#fff"
            }
           ]
         }
@@ -184,11 +185,78 @@
     }
   },
   {
-    "path": "/review-site-link/:linkId",
+    "path": "/review-site-link/:reviewSiteId",
     "method": "PATCH",
     "desc": "Update review site link attributes",
     "req_body": {
       "extern_id": "ChIJ2X5gRFNp6oAR8-elSupH1Js"
+    }
+  },
+  {},
+  {
+    "path": "/invite/new",
+    "method": "POST",
+    "desc": "Send new review invite",
+    "req_body": {
+      "to_phone": "801-655-3251"
+    },
+    "examples": {
+      "success": {
+        "data": {
+          "success": true
+        }
+      },
+      "fail": {
+        "error(1)": {
+          "key": "INVALID_NUMBER",
+          "message": "Please provide a valid phone number."
+        },
+        "error(2)": {
+          "key": "NOT_AUTHORIZED"
+        }
+      }
+    }
+  },
+  {
+    "path": "/invite/list?page=0",
+    "method": "GET",
+    "desc": "Get first page of invites for current location",
+    "examples": {
+      "success": {
+        "data": [
+          {
+            "to_phone": "801-655-3251",
+            "date_created": 1537937156446,
+            "date_opened": 1537937156446,
+            "date_opened": 1537937156446,
+            "date_complained": null,
+            "feedback_positive": false,
+            "feedback_neutral": true,
+            "feedback_negative": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "/invite/:inviteId",
+    "method": "PATCH",
+    "desc": "Update invite attributes",
+    "req_body": {
+      "date_opened": "truthy-string",
+      "date_complained": "truthy-string",
+      "feedback_positive": true,
+      "feedback_neutral": true,
+      "feedback_negative": true
+    }
+  },
+  {
+    "path": "/invite/action",
+    "method": "POST",
+    "desc": "Save action taken on a review site (clicking google link)",
+    "req_body": {
+      "invite_id": 34,
+      "review_site_id": 1
     }
   }
 ]

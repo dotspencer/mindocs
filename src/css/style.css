@@ -4,7 +4,7 @@ body {
   margin-bottom: 200px;
 }
 .content {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 h1 {
@@ -37,7 +37,7 @@ h3 {
   background-color: #e6573e;
 }
 .tag.patch {
-  background-color: #bb01bb;
+  background-color: orange;
 }
 img.chevron {
   position: absolute;
